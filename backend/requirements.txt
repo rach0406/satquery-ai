@@ -1,0 +1,29 @@
+# ---- SatQuery AI :: backend runtime ----
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.4
+pydantic-settings==2.7.1
+python-multipart==0.0.20
+requests==2.32.3
+numpy==2.2.1
+pandas==2.2.3
+Pillow==11.1.0
+scipy==1.15.0
+scikit-learn==1.6.1
+scikit-image==0.25.0
+python-dotenv==1.0.1
+httpx==0.28.1
+
+# ---- GeoTIFF ingestion: CRS, transform and per-band metadata ----
+# Required to read georeferencing out of a GeoTIFF. Still auto-detected at
+# runtime: without it, TIFFs load through Pillow and the system reports that
+# georeferencing was unavailable rather than inventing a transform - so the
+# app runs either way, it just cannot tell you where a GeoTIFF is.
+rasterio==1.5.1
+
+# ---- optional: LLM planner / narrator (auto-detected; system works fully without it) ----
+# anthropic==0.42.0
+
+# ---- optional: deep RS adaptation backend (auto-detected; sklearn fallback used otherwise) ----
+# torch==2.5.1
+# torchvision==0.20.1

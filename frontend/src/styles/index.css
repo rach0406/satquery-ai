@@ -1,0 +1,294 @@
+@import 'leaflet/dist/leaflet.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --ring-brand: rgba(42, 120, 214, 0.22);
+  }
+
+  * {
+    border-color: theme('colors.paper.300');
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    @apply bg-paper-100 text-ink-800 font-sans text-base antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'ss01';
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-display font-semibold text-ink-900;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    @apply bg-orbit-200 text-ink-900;
+  }
+
+  ::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-pill border-4 border-solid border-transparent bg-ink-200 bg-clip-content;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-ink-300 bg-clip-content;
+  }
+
+  :focus-visible {
+    @apply outline-none;
+    box-shadow: theme('boxShadow.focus');
+    border-radius: 6px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* ---------------------------------------------------------- layout */
+  .shell {
+    @apply mx-auto w-full max-w-content px-6 lg:px-8;
+  }
+  .shell-wide {
+    @apply mx-auto w-full max-w-wide px-6 lg:px-8;
+  }
+  .section {
+    @apply py-section-sm lg:py-section;
+  }
+
+  /* ---------------------------------------------------------- surface */
+  .card {
+    @apply rounded-card border border-paper-300 bg-white shadow-card;
+  }
+  .card-quiet {
+    @apply rounded-card border border-paper-300 bg-paper-50;
+  }
+  .card-hover {
+    @apply transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-orbit-200 hover:shadow-raised;
+  }
+  .panel {
+    @apply rounded-panel border border-paper-300 bg-white shadow-card;
+  }
+  .panel-head {
+    @apply flex flex-wrap items-center justify-between gap-3 border-b border-paper-200 px-5 py-4;
+  }
+  .panel-title {
+    @apply font-display text-h5 font-semibold text-ink-900;
+  }
+  .panel-eyebrow {
+    @apply text-micro font-semibold uppercase tracking-[0.13em] text-ink-400;
+  }
+
+  /* ---------------------------------------------------------- type */
+  .eyebrow {
+    @apply mb-3 inline-flex items-center gap-2 text-micro font-semibold uppercase tracking-[0.16em] text-orbit-600;
+  }
+  .lede {
+    @apply max-w-prose text-lead leading-relaxed text-ink-500;
+  }
+  .muted {
+    @apply text-small text-ink-400;
+  }
+  .mono {
+    @apply font-mono text-micro tracking-tight;
+  }
+  .num {
+    @apply font-mono tabular-nums;
+  }
+
+  /* ---------------------------------------------------------- controls */
+  .btn {
+    @apply inline-flex select-none items-center justify-center gap-2 rounded-lg
+           px-5 py-2.5 text-small font-semibold transition-all duration-150 ease-out
+           disabled:pointer-events-none disabled:opacity-45;
+  }
+  .btn-lg {
+    @apply px-6 py-3 text-base;
+  }
+  .btn-primary {
+    @apply btn bg-orbit-600 text-white shadow-[0_1px_0_rgba(255,255,255,.18)_inset,0_6px_16px_-8px_rgba(42,120,214,.85)]
+           hover:bg-orbit-700 active:translate-y-px;
+  }
+  .btn-secondary {
+    @apply btn border border-paper-400 bg-white text-ink-700 hover:border-ink-200 hover:bg-paper-100;
+  }
+  .btn-ghost {
+    @apply btn text-ink-500 hover:bg-paper-200 hover:text-ink-800;
+  }
+  .btn-invert {
+    @apply btn border border-white/20 bg-white/10 text-white backdrop-blur hover:bg-white/20;
+  }
+
+  .field {
+    @apply w-full rounded-lg border border-paper-400 bg-white px-4 py-3 text-base text-ink-900
+           placeholder:text-ink-300 transition-colors duration-150
+           focus:border-orbit-500 focus:outline-none;
+  }
+  .field-label {
+    @apply mb-1.5 block text-small font-semibold text-ink-700;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-pill border px-2.5 py-1 text-micro font-medium;
+  }
+  .chip-neutral {
+    @apply chip border-paper-400 bg-paper-100 text-ink-500;
+  }
+  .chip-brand {
+    @apply chip border-orbit-200 bg-orbit-50 text-orbit-700;
+  }
+  .chip-ok {
+    @apply chip border-signal-green/30 bg-signal-green/10 text-signal-green;
+  }
+  .chip-warn {
+    @apply chip border-signal-amber/30 bg-signal-amber/10 text-signal-amber;
+  }
+  .chip-bad {
+    @apply chip border-signal-red/30 bg-signal-red/10 text-signal-red;
+  }
+
+  .tab {
+    @apply relative whitespace-nowrap rounded-t-lg px-4 py-3 text-small font-semibold
+           text-ink-400 transition-colors duration-150 hover:text-ink-700;
+  }
+  .tab-active {
+    @apply text-orbit-700;
+  }
+  .tab-active::after {
+    content: '';
+    @apply absolute inset-x-3 -bottom-px h-[2.5px] rounded-full bg-orbit-600;
+  }
+
+  /* ---------------------------------------------------------- data */
+  .table-wrap {
+    @apply w-full overflow-x-auto rounded-card border border-paper-300;
+  }
+  .dtable {
+    @apply w-full border-collapse text-small;
+  }
+  .dtable thead tr {
+    @apply bg-paper-100;
+  }
+  .dtable th {
+    @apply whitespace-nowrap border-b border-paper-300 px-4 py-3 text-left text-micro
+           font-semibold uppercase tracking-[0.08em] text-ink-400;
+  }
+  .dtable td {
+    @apply border-b border-paper-200 px-4 py-2.5 align-top text-ink-700;
+  }
+  .dtable tbody tr:last-child td {
+    @apply border-0;
+  }
+  .dtable tbody tr:hover {
+    @apply bg-paper-50;
+  }
+
+  .skeleton {
+    @apply relative overflow-hidden rounded-card bg-paper-200;
+  }
+  .skeleton::after {
+    content: '';
+    @apply absolute inset-0 -translate-x-full animate-shimmer;
+    background-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.75), transparent);
+  }
+
+  /* ---------------------------------------------------------- dark accents */
+  .on-night {
+    @apply bg-night-900 text-paper-200;
+  }
+  .night-grid {
+    background-image: linear-gradient(rgba(147, 187, 253, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(147, 187, 253, 0.07) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+
+  .divider {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-paper-400 to-transparent;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .stack-lg > * + * {
+    margin-top: 1.5rem;
+  }
+  .scroll-y {
+    @apply overflow-y-auto overscroll-contain;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+}
+
+/* ================= Leaflet, themed for a light UI ==================== */
+.leaflet-container {
+  @apply bg-night-900 font-sans;
+}
+.leaflet-control-attribution {
+  @apply !bg-white/90 !text-micro !text-ink-400 backdrop-blur-sm;
+}
+.leaflet-control-attribution a {
+  @apply !text-ink-500;
+}
+.leaflet-bar {
+  @apply !border-paper-300 !shadow-card;
+}
+.leaflet-bar a {
+  @apply !border-paper-200 !bg-white !text-ink-700;
+}
+.leaflet-bar a:hover {
+  @apply !bg-paper-100;
+}
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  @apply !bg-white !text-ink-700 !shadow-float;
+}
+.leaflet-popup-content-wrapper {
+  @apply !rounded-card;
+}
+.leaflet-popup-content {
+  @apply !m-4 !text-tiny !leading-relaxed;
+}
+.satq-basemap-soft {
+  filter: saturate(0.85) contrast(1.02);
+}

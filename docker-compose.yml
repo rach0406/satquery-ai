@@ -1,0 +1,20 @@
+services:
+  satquery:
+    build: .
+    image: satquery-ai:1.0.0
+    container_name: satquery-ai
+    ports:
+      - "8000:8000"
+    volumes:
+      # Persist the imagery cache and the trained model between runs.
+      - satquery-data:/srv/data
+    environment:
+      # All optional. The system runs fully without any of them.
+      SATQUERY_STRICT_GROUNDING: "true"
+      SATQUERY_RASTER_SIZE: "512"
+      SATQUERY_CORS: "http://localhost:8000,http://127.0.0.1:8000"
+      # ANTHROPIC_API_KEY: "${ANTHROPIC_API_KEY:-}"
+    restart: unless-stopped
+
+volumes:
+  satquery-data:

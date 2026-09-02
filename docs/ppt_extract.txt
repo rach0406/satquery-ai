@@ -1,0 +1,92 @@
+============================== PAGE 1 ==============================
+SMART INDIA HACKATHON 2026
+• Problem Statement ID - SIH26167
+• Problem Statement Title - SatQuery AI
+• Theme - Space Technology 
+• PS Category - Software
+• Team Name - Avengers
+
+============================== PAGE 2 ==============================
+SATQUERY AI 
+● Natural-language interface to query satellite and geospatial data, converting user queries into 
+automated data selection and analysis workflows.
+● Integrates satellite imagery, geospatial processing and AI/ML for analysis, delivering results 
+through interactive maps, visualizations and concise insights.
+● Eliminates the need for complex GIS/satellite-data expertise while automating data 
+discovery, preprocessing and analysis.
+● Reduces the time and effort required to extract insights, enabling researchers, officials and 
+other users to access actionable satellite insights easily.
+● Natural Language → Geospatial Analysis pipeline with AI-driven conversion of queries into 
+relevant analytical workflows.
+● Supports multi-source satellite/geospatial datasets and combines automated analysis, visual 
+results and human-readable insights.
+2
+Avengers
+Proposed Solution 
+============================== PAGE 3 ==============================
+TECHNICAL APPROACH
+● Frontend: React.js + 
+Leaflet/Mapbox
+● Backend: Python + 
+FastAPI
+● AI/ML: Vision-Language 
+Model (VLM) + LLM using                                                                      
+PyTorch/Hugging Face
+● Image Processing: 
+OpenCV + Rasterio + 
+GDAL
+● GIS/Spatial Analysis: 
+GeoPandas + PostGIS
+● Database: 
+PostgreSQL/PostGIS + 
+Object Storage
+● Deployment: Docker + 
+Cloud
+ 3
+Avengers
+
+============================== PAGE 4 ==============================
+FEASIBILITY AND VIABILITY
+4
+Avengers
+Feasibility
+● Open satellite datasets + proven AI/ML & GIS technologies
+● Scalable, modular architecture
+● Focused MVP for faster implementation
+Challenges
+● Large datasets → high processing requirements
+● Ambiguous queries → inaccurate analysis
+● Cloud cover & limited labelled data → reduced accuracy
+Solutions
+● Tiling, filtering & selective data retrieval
+● Query validation + predefined workflows
+● Cloud masking + transfer learning models
+============================== PAGE 5 ==============================
+IMPACT AND BENEFITS
+5
+Avengers
+Impact
+● Researchers & Scientists: Faster satellite insights without advanced GIS expertise.
+● Government & Disaster Management: Faster detection of floods and land-use 
+changes for timely response.
+● Decision-Makers: AI-driven evidence for faster, informed decisions.
+Benefits
+● Economic: Reduces time, cost and technical effort in satellite-data analysis.
+● Social: Makes complex geospatial insights accessible to non-experts.
+● Environmental: Supports monitoring of deforestation, water bodies and vegetation 
+changes.
+
+============================== PAGE 6 ==============================
+RESEARCH  AND REFERENCES
+● RemoteCLIP — Vision-language foundation model for remote-sensing image 
+understanding
+● GeoChat — Grounded vision-language model for remote-sensing image and 
+spatial reasoning
+● Remote-Sensing Change Detection  — Research on temporal change 
+analysis using satellite imagery
+● RSVQA — Visual Question Answering for Remote Sensing Data —  
+https://arxiv.org/abs/2003.07333
+● Copernicus Sentinel Data Space  — Sentinel-1 & Sentinel-2 satellite data —  
+https://dataspace.copernicus.eu/
+6
+Avengers

@@ -1,0 +1,50 @@
+{
+  "demo": {
+    "username": "demo",
+    "display_name": "Demo Analyst",
+    "email": null,
+    "organisation": "Team Avengers - SIH 2026",
+    "salt": "b29df1e4bf28c4ad643c71ff94d72f93",
+    "hash": "27b3afa17b9061f98bf87b129b3ea9bea01ab7d742dce1a9142eb5aad9502f07",
+    "iterations": 200000,
+    "created_at": "2026-08-27T07:59:52+00:00",
+    "last_login": "2026-09-02T07:21:16+00:00",
+    "is_demo": true
+  },
+  "sreehari.analyst": {
+    "username": "sreehari.analyst",
+    "display_name": "Sreehari K",
+    "email": "sreehari@avengers.test",
+    "organisation": null,
+    "salt": "c0046c71d77b55f7a58559a3cd36acb2",
+    "hash": "b059fe0afb069c98acddcfee73d3f06d0f0371074c0b9892f58cae993fcdf9b9",
+    "iterations": 200000,
+    "created_at": "2026-09-02T06:55:01+00:00",
+    "last_login": "2026-09-02T07:14:39+00:00",
+    "is_demo": false
+  },
+  "varshitha_16": {
+    "username": "Varshitha_16",
+    "display_name": "Satya Sai Varshitha Chakicherla",
+    "email": "css.varshitha@gmail.com",
+    "organisation": null,
+    "salt": "7426cf71abc25cdea0b97ea138449d32",
+    "hash": "59545cdb08bb631e073bad2a751cdb9db4d037a3e90b7d1379cec177eaea42a1",
+    "iterations": 200000,
+    "created_at": "2026-09-02T07:24:16+00:00",
+    "last_login": null,
+    "is_demo": false
+  },
+  "rach12345": {
+    "username": "Rach12345",
+    "display_name": "Rachitha.S",
+    "email": null,
+    "organisation": null,
+    "salt": "9ff271bc128666cc9ac7dd5816e70c0b",
+    "hash": "e3012135167c8c6dd0736c7820305066e2b6337833147e9a1c1a16ab8504cdd0",
+    "iterations": 200000,
+    "created_at": "2026-09-02T07:31:51+00:00",
+    "last_login": null,
+    "is_demo": false
+  }
+}
